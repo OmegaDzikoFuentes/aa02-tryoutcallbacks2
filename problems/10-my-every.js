@@ -22,7 +22,25 @@ console.log(myEvery(['book', 'door', 'pen'], hasO));    // false
 *******************************************************************************/
 
 function myEvery(array, cb) {
-    // Your code here 
+
+    //loop through given arr
+    for (let i = 0; i < array.length; i++) {
+
+    //strore arr value in variable
+    let val = array[i];
+
+    //if if cb on value is false
+        if(!cb(val)) {
+
+    //if false return false
+            return false;
+
+        }
+
+    }
+
+    //otherwise return tru
+    return true;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
