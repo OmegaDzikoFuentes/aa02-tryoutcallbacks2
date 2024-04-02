@@ -19,7 +19,25 @@ console.log(arr2); // [ 0, 9, 20 ]
 *******************************************************************************/
 
 function mapMutator(array, cb) {
-  // Your code here 
+
+  //loop through given arr
+  for (let i = 0; i < array.length; i++) {
+
+  //store arr value in variable
+  let val = array[i];
+
+  //store the result of cb on value in variable
+  let changed = cb(val, i);
+
+  //remove curr arr value and simultaneously add ressult of cb to arr
+  array.splice(i, 1, changed);
+
+  }
+
+  //return mutated arr
+
+  return array;
+  
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
