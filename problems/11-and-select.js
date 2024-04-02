@@ -29,7 +29,28 @@ console.log(andSelect(['ants', 'APPLES', 'ART', 'BACON', 'arm'], isUpperCase,  s
 *******************************************************************************/
 
 function andSelect(array, cb1, cb2) {
-  // Your code here 
+
+  //create empty arr
+  let ansArr = [];
+
+  //loop through given arr
+  for (let i = 0; i < array.length; i++) {
+
+  //store arr value in variable
+  let val = array[i];
+
+  //ask if both cb equal true
+    if(cb1(val) && cb2(val)) {
+
+  //if yes send to arr
+      ansArr.push(val);
+
+    }
+
+  }
+
+  //return arr
+  return ansArr;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
