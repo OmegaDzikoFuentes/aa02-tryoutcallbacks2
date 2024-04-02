@@ -22,7 +22,20 @@ console.log(result3); // hi!!!!!
 *******************************************************************************/
 
 function multiMap(val, n, cb) {
-  // Your code here 
+
+  //store value from global scope in variable in local scope for acces to loop
+  let value = val;
+
+  //loop up to n times
+  for (let i = 0; i < n; i++) {
+
+  //call cb on value stored in value variable and reasssign to value
+  value = cb(value);
+
+  }
+
+  //return value
+  return value;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
