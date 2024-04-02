@@ -24,7 +24,25 @@ console.log(result3);   // true
 *******************************************************************************/
 
 function mySome(array, cb) {
-    // Your code here 
+
+    //loop through given arr
+    for (let i = 0; i < array.length; i++) {
+
+    //store arr value in variable
+    let val = array[i];
+
+    //ask if cb on value and index is true
+        if(cb(val, i)) {
+
+            //if yes return true
+            return true;
+
+        }
+
+    }
+
+    //otherwise return false
+    return false;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
