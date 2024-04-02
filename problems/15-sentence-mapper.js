@@ -26,7 +26,18 @@ console.log(result2); // 'ths s prtty cl rght'
 *******************************************************************************/
 
 let sentenceMapper = function (sentence, cb) {
-  // Your code here 
+
+  //split sent str into arr
+  let sentArr = sentence.split(" ");
+
+  //use map method on sent arr and store result in variable
+  let mapped = sentArr.map((word) => cb(word));
+  //inside msp method run cb on each word of sent arr
+
+
+  //return mapped arr joined into string
+
+  return mapped.join(" ");
 };
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
