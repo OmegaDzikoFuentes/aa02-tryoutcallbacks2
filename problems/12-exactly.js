@@ -28,7 +28,36 @@ console.log(result4); // true
 *******************************************************************************/
 
 function exactly(array, num, cb) {
-  // Your code here 
+
+  //create count starting at zero
+  let count = 0;
+
+  //loop through given arr
+  for (let i = 0; i < array.length; i++) {
+
+  //store arr value in variable
+  let val = array[i];
+
+  //ask if cb on value is true
+      if(cb(val)) {
+
+  //if tru increment count
+        count++;
+
+      }
+
+    }
+  //outside loop ask if count equals given number
+  if(num === count) {
+
+  //if true return true
+  return true;
+
+  }
+
+  //otherwise return false
+
+  return false;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
