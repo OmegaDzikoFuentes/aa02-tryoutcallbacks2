@@ -27,7 +27,27 @@ console.log(result4); // 0
 *******************************************************************************/
 
 function count(array, cb) {
-  // Your code here 
+
+  //create a count at zero
+let count = 0;
+
+  //loop through given arr
+  for (let i = 0; i < array.length; i++) {
+
+  //store arr value in variable
+  let val = array[i];
+
+  //ask if cb on val is true
+    if(cb(val)) {
+
+  //if yes increment count
+  count++;
+    }
+
+  }
+
+  //return count
+  return count;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
