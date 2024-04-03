@@ -35,7 +35,24 @@ console.log(alternatingMap(['hEy', 'EVERYone', 'whats', 'uP??'], yell, whisper))
 *******************************************************************************/
 
 function alternatingMap(array, cb1, cb2) {
-  // Your code here 
+
+  //create empty arr
+  let ansArr = [];
+
+  //loop throu given arr
+  for (let i = 0; i < array.length; i++) {
+
+  //store in variable ternary operator
+  let called = i % 2 === 0 ? cb1  : cb2;
+
+  //push result of ternary operator to arr
+    ansArr.push(called(array[i]));
+
+  }
+
+  //return arr
+  return ansArr;
+  
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
