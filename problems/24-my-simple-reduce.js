@@ -31,7 +31,23 @@ console.log(result3); // 8
 *******************************************************************************/
 
 function mySimpleReduce(array, cb) {
-  // Your code here 
+
+  //store first ele of given arr as acc
+  let acc = array[0];
+
+  //loop through arr starting at 1
+  for (let i = 1; i < array.length; i++) {
+
+  //store value of arr in variable
+    let val = array[i];
+
+  //store result of cb on acc and curr val to acc
+    acc = cb(acc, val);
+
+  }
+
+  //return acc
+  return acc;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
