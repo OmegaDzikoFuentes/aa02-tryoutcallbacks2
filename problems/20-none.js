@@ -29,8 +29,48 @@ console.log(result4);   // false
 *******************************************************************************/
 
 function none(array, cb) {
-  // Your code here 
+
+  //use every method on arr
+  let every = array.every((ele) => {
+
+  //ask if cb on all arr ele is false
+      if(!cb(ele)) {
+
+  //if false return true
+          return true;
+
+      }
+
+    });
+
+  //otherwise return false
+  if(every) {
+
+    return true;
+  }
+
+  return false;
 }
+
+let result1 = none(['ruby', 'topaz', 'opal'], function(w) {
+  return w.includes('e');
+});
+console.log(result1);   // true
+
+let result2 = none(['ruby', 'topaz', 'sapphire', 'opal'], function(w) {
+  return w.includes('e');
+});
+console.log(result2);   // false
+
+let result3 = none([4, 5, 7, 1], function(n) {
+  return n < 0;
+});
+console.log(result3);   // true
+
+let result4 = none([4, -5, 7, -1], function(n) {
+  return n < 0;
+});
+console.log(result4);   // false
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {

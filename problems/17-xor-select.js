@@ -32,8 +32,24 @@ console.log(
 *******************************************************************************/
 
 let xorSelect = function(array, cb1, cb2) {
-  // Your code here 
-};
+
+
+  //create variable to store arr filter method
+  let filtered = array.filter((word) => {
+
+  //ask if the value of method is exclusively true
+      if((cb1(word) || cb2(word)) && !(cb1(word) && cb2(word))) {
+
+  //if yes return word
+            return word;
+
+      }
+
+    });
+
+  //return filtered arr
+  return filtered;
+}
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {

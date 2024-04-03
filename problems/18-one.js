@@ -38,8 +38,70 @@ console.log(result6);   // true
 *******************************************************************************/
 
 function one(array, cb) {
-  // Your code here 
+
+  //create count
+  let count = 0;
+
+  //loop through arr
+  for (let i = 0; i < array.length; i++) {
+
+  //store arr value in variable
+    let val = array[i];
+
+  //ask if cb on value is true
+      if(cb(val, i)) {
+
+  //if yes increment count
+          count++;
+
+      }
+
+    }
+
+  //outside loop ask if count equals 1
+  if(count === 1) {
+
+  //if yes return true
+    return true;
+
+  }
+
+    return false;
+
+
+  //otherwise return false
+
 }
+
+let result1 = one(['x', 'y', 'z'], function(el) {
+  return el === 'a';
+});
+console.log(result1);   // false
+
+let result2 = one(['x', 'a', 'y', 'z'], function(el) {
+  return el === 'a';
+});
+console.log(result2);   // true
+
+let result3 = one(['x', 'a', 'y', 'a', 'z'], function(el) {
+  return el === 'a';
+});
+console.log(result3);   // false
+
+let result4 = one(['apple', 'dog'], function(el) {
+  return el.length > 3;
+});
+console.log(result4);   // true
+
+let result5 = one(['apple', 'dog', 'pear'], function(el) {
+  return el.length > 3;
+});
+console.log(result5);   // false
+
+let result6 = one(['apple', 'dog', 'food', 'cat'], function(el, idx) {
+  return el.length === idx;
+});
+console.log(result6);   // true
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
